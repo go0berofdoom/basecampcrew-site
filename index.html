@@ -22,10 +22,45 @@
   <link rel="stylesheet" href="/css/site.css">
   <script src="/js/vendor/gsap.min.js" defer></script>
   <script src="/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/js/vendor/MotionPathPlugin.min.js" defer></script>
+  <script src="/js/vendor/lenis.min.js" defer></script>
   <script src="/js/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="avatar-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="avatar-sarah" viewBox="0 0 64 64">
+        <circle class="portrait-bg portrait-bg-sarah" cx="32" cy="32" r="30"/>
+        <path class="portrait-hair portrait-hair-sarah" d="M11 45c-3-6 2-10 0-16-2-9 5-19 15-19 5-5 17-3 21 5 8 2 9 12 6 18 4 7-2 15-9 17H19c-6-1-10-7-8-13Z"/>
+        <path class="portrait-skin" d="M27 46h10v10H27z"/>
+        <path class="portrait-top portrait-top-sarah" d="M10 64c2-10 8-15 17-15h10c9 0 15 5 17 15Z"/>
+        <path class="portrait-flannel" d="m20 51 12 10 12-10-7-3H27Z"/>
+        <path class="portrait-flannel-line" d="m20 51 9 3 3 7 3-7 9-3M32 61v3"/>
+        <path class="portrait-skin portrait-face" d="M18 27c0-10 6-16 14-16s14 6 14 16v7c0 10-6 16-14 16S18 44 18 34Z"/>
+        <path class="portrait-hair portrait-hair-sarah" d="M17 29c-1-12 6-20 15-20 8 0 14 6 16 15-8 0-14-4-18-9-2 6-7 11-13 14Zm-4 17c6-2 5-8 4-14l6 3c1 7-1 12-6 15Zm38 0c-6-2-5-8-4-14l-6 3c-1 7 1 12 6 15Z"/>
+        <path class="portrait-feature" d="M25 30h2m10 0h2"/>
+        <path class="portrait-smile portrait-smile-wide" d="M24 37c2 6 14 6 16 0-5 2-11 2-16 0Z"/>
+        <g class="portrait-sunglasses">
+          <circle cx="25" cy="12" r="5"/><circle cx="39" cy="12" r="5"/><path d="M30 12h4M20 10l-4-2m28 2 4-2"/>
+        </g>
+        <circle class="portrait-ring" cx="32" cy="32" r="30"/>
+      </symbol>
+      <symbol id="avatar-katie" viewBox="0 0 64 64">
+        <circle class="portrait-bg portrait-bg-katie" cx="32" cy="32" r="30"/>
+        <path class="portrait-hair portrait-hair-katie" d="M10 61V29C10 14 18 5 31 5c14 0 23 10 23 25v31H42V29H22v32Z"/>
+        <path class="portrait-skin" d="M27 46h10v10H27z"/>
+        <path class="portrait-top portrait-top-katie" d="M9 64c2-10 9-15 18-15h10c9 0 16 5 18 15Z"/>
+        <path class="portrait-skin portrait-face" d="M18 26c0-10 6-16 14-16s14 6 14 16v8c0 10-6 16-14 16S18 44 18 34Z"/>
+        <path class="portrait-hair portrait-hair-katie" d="M16 58V28c0-12 6-20 14-21-1 7-5 15-12 21l5 2v28Zm35 0V29C51 16 43 7 30 7c6 4 11 10 14 18 1 10 0 22-1 33Z"/>
+        <circle class="portrait-hoop" cx="18" cy="36" r="3.7"/>
+        <circle class="portrait-hoop" cx="46" cy="36" r="3.7"/>
+        <path class="portrait-feature" d="M25 30h2m10 0h2"/>
+        <path class="portrait-smile portrait-smile-wide" d="M24 37c2 6 14 6 16 0-5 2-11 2-16 0Z"/>
+        <circle class="portrait-ring" cx="32" cy="32" r="30"/>
+      </symbol>
+    </defs>
+  </svg>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="BaseCamp home">
       <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M5 35 19.6 9l6.8 11.8 4.2-6.8L39 35Z"/><path class="brand-fire" d="m18 35 7.1-11.6L32 35Z"/></svg>
@@ -42,13 +77,15 @@
   <main id="main">
     <svg class="journey-thread" viewBox="0 0 1440 4200" preserveAspectRatio="none" aria-hidden="true">
       <defs>
+        <linearGradient id="journey-headlight" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7c86c" stop-opacity=".68"/><stop offset="1" stop-color="#f7c86c" stop-opacity="0"/></linearGradient>
         <mask id="journey-reveal">
-          <path class="journey-mask-path" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-455 302-576 582"/>
+          <path class="journey-mask-path" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-330 302-230 582"/>
         </mask>
       </defs>
-      <path class="journey-ghost" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-455 302-576 582"/>
-      <path class="journey-route" mask="url(#journey-reveal)" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-455 302-576 582"/>
-      <g class="journey-rv" transform="translate(374 4200)">
+      <path class="journey-ghost" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-330 302-230 582"/>
+      <path class="journey-route" mask="url(#journey-reveal)" d="M1105 0C1040 235 738 258 714 560S890 923 765 1190 445 1415 510 1720s399 252 420 584-266 407-208 704 331 295 228 610-330 302-230 582"/>
+      <g class="journey-rv" transform="translate(720 4000)">
+        <path class="journey-headlight" d="M20-8 92-31v63L20 10Z"/>
         <path d="M-22-10h30c7 0 13 5 15 12l3 10h-48Z"/><rect x="-16" y="-6" width="11" height="7" rx="1"/><rect x="-1" y="-6" width="9" height="7" rx="1"/><circle cx="-12" cy="13" r="5"/><circle cx="16" cy="13" r="5"/>
       </g>
     </svg>
@@ -80,6 +117,8 @@
           <g class="cloud cloud-three"><ellipse cx="671" cy="244" rx="36" ry="10"/><ellipse cx="655" cy="238" rx="18" ry="14"/><ellipse cx="681" cy="232" rx="23" ry="18"/></g>
           <path class="route-orbit" d="M72 179C222 42 423 50 600 120"/>
           <circle class="route-dot" cx="73" cy="179" r="7"/>
+          <path class="bird-flight-path" d="M-55 188C120 118 264 176 404 116S684 72 820 137"/>
+          <g class="bird-flock"><circle cx="0" cy="0" r="3.1"/><circle cx="-10" cy="5" r="2.4"/><circle cx="-19" cy="1" r="2"/></g>
           <path class="mountain-far" d="M-5 353 164 174l90 106 94-146 185 220 85-116 147 125v76H-5Z"/>
           <path class="snow" d="m164 174 90 106-47-30-32 21-29-30-45 21Zm184-40 93 111-43-22-34 23-25-28-38 19Zm270 104 63 54-35-14-25 17-18-17-31 17Z"/>
           <path class="mountain-near" d="M-10 383 121 259l95 80 111-106 124 114 74-67 105 93 140-102v207H-10Z"/>
@@ -90,13 +129,13 @@
           <path class="road" d="M-30 618c167-54 250-9 338-45 100-42 89-106 181-119 88-12 167 23 296 75l-31 115H-30Z"/>
           <path class="road-line" d="M-10 624c151-43 235-10 325-48 97-41 91-99 179-113 79-12 161 19 281 67"/>
           <g class="rv rv-one" transform="translate(86 503)">
-            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/>
+            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/><path class="wheel-spoke" d="M34 38v16m-8-8h16"/><path class="wheel-spoke" d="M128 38v16m-8-8h16"/>
           </g>
           <g class="rv rv-two" transform="translate(302 476) scale(.8)">
-            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/>
+            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/><path class="wheel-spoke" d="M34 38v16m-8-8h16"/><path class="wheel-spoke" d="M128 38v16m-8-8h16"/>
           </g>
           <g class="rv rv-three" transform="translate(510 451) scale(.58)">
-            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/>
+            <path class="rv-body" d="M0 14C0 6 6 0 14 0h110c13 0 25 9 29 21l7 25H11C5 46 0 41 0 35Z"/><path class="rv-glass" d="M102 8h20c10 0 17 8 21 20h-41Z"/><rect class="rv-window" x="15" y="9" width="35" height="21" rx="3"/><rect class="rv-window" x="57" y="9" width="35" height="21" rx="3"/><circle cx="34" cy="46" r="14"/><circle cx="128" cy="46" r="14"/><circle class="hub" cx="34" cy="46" r="5"/><circle class="hub" cx="128" cy="46" r="5"/><path class="wheel-spoke" d="M34 38v16m-8-8h16"/><path class="wheel-spoke" d="M128 38v16m-8-8h16"/>
           </g>
           <g class="map-label" transform="translate(486 287)"><path d="M0 21C0 9 10 0 22 0s22 9 22 21c0 17-22 38-22 38S0 38 0 21Z"/><circle cx="22" cy="21" r="7"/><text x="54" y="25">CREW CAMP</text></g>
         </svg>
@@ -112,6 +151,15 @@
       <div class="section-copy reveal">
         <p class="kicker">01 · Beyond the group chat</p>
         <h2 id="together-title">Turn “we should”<br><em>into “we’re in.”</em></h2>
+        <div class="crew-cluster">
+          <div class="crew-cluster-avatars" aria-hidden="true">
+            <svg class="crew-cluster-avatar named-avatar" viewBox="0 0 64 64"><use href="#avatar-katie"/></svg>
+            <svg class="crew-cluster-avatar named-avatar" viewBox="0 0 64 64"><use href="#avatar-sarah"/></svg>
+            <span class="crew-cluster-avatar crew-dot crew-dot-orange"></span>
+            <span class="crew-cluster-avatar crew-dot crew-dot-green"></span>
+          </div>
+          <span class="crew-cluster-caption">the whole crew, one map</span>
+        </div>
         <p>Group texts are good at dreaming and terrible at departing. BaseCamp keeps the chat, dates, RSVPs, and every rig’s shared location with the trip—so the plan finally leaves home.</p>
         <ul class="feature-list" aria-label="Planning features">
           <li><span>01</span><div><strong>Crew chat</strong><small>Decisions stay with the trip</small></div></li>
@@ -122,38 +170,42 @@
       <div class="plan-art reveal" data-parallax="0.018">
         <svg class="chat-phone" viewBox="0 0 620 610" role="img" aria-labelledby="chat-title chat-desc">
           <title id="chat-title">BaseCamp crew chat</title>
-          <desc id="chat-desc">A floating phone card with messages about a Labor Day trip to Bear Lake and a date poll.</desc>
+          <desc id="chat-desc">A floating phone card showing Katie and Sarah planning a Labor Day trip to Bear Lake and voting in a date poll.</desc>
           <path class="chat-route" d="M38 496C123 423 168 505 247 431S386 339 494 382s93-65 112-94"/>
           <g class="chat-device">
             <rect class="phone-shell" x="112" y="20" width="396" height="560" rx="54"/>
             <rect class="phone-screen" x="128" y="36" width="364" height="528" rx="41"/>
             <rect class="phone-notch" x="258" y="49" width="104" height="20" rx="10"/>
             <text class="phone-meta" x="158" y="91">BEAR LAKE · CREW CHAT</text>
-            <circle class="avatar avatar-one" cx="164" cy="132" r="16"/>
-            <text class="avatar-letter" x="164" y="137">M</text>
-            <rect class="bubble bubble-in" x="194" y="111" width="250" height="58" rx="18"/>
-            <text class="bubble-text" x="216" y="146">Labor Day at Bear Lake?</text>
-            <circle class="avatar avatar-two" cx="456" cy="207" r="16"/>
-            <text class="avatar-letter" x="456" y="212">J</text>
-            <rect class="bubble bubble-out" x="218" y="185" width="206" height="58" rx="18"/>
-            <text class="bubble-text bubble-text-light" x="244" y="220">We’re in 🏕️</text>
-            <rect class="poll-card" x="158" y="276" width="304" height="178" rx="23"/>
-            <text class="poll-label" x="184" y="310">DATE POLL · 5 VOTES</text>
-            <text class="poll-date" x="184" y="352">Sep 4–7</text>
-            <g class="poll-checks" aria-hidden="true"><text class="poll-check" x="390" y="352">✓</text><text class="poll-check" x="410" y="352">✓</text><text class="poll-check" x="430" y="352">✓</text></g>
-            <rect class="poll-track" x="184" y="378" width="248" height="12" rx="6"/>
-            <rect class="poll-fill" x="184" y="378" width="207" height="12" rx="6"/>
-            <g transform="translate(184 418)">
-              <circle class="avatar avatar-one" cx="15" cy="15" r="15"/><circle class="avatar avatar-two" cx="42" cy="15" r="15"/><circle class="avatar avatar-three" cx="69" cy="15" r="15"/>
-              <text class="avatar-letter" x="15" y="20">M</text><text class="avatar-letter" x="42" y="20">J</text><text class="avatar-letter" x="69" y="20">A</text>
-              <text class="poll-ready" x="98" y="20">THE CREW IS IN</text>
+            <g class="chat-message chat-message-one">
+              <svg class="chat-avatar" x="150" y="118" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg>
+              <rect class="bubble bubble-in" x="194" y="105" width="250" height="66" rx="18"/>
+              <text class="sender-name" x="216" y="126">Katie</text><text class="bubble-text" x="216" y="151">Labor Day at Bear Lake?</text>
+            </g>
+            <g class="typing-indicator typing-one"><rect x="194" y="111" width="92" height="58" rx="18"/><circle cx="220" cy="140" r="4"/><circle cx="240" cy="140" r="4"/><circle cx="260" cy="140" r="4"/></g>
+            <g class="chat-message chat-message-two">
+              <svg class="chat-avatar" x="442" y="193" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-sarah"/></svg>
+              <rect class="bubble bubble-out" x="218" y="179" width="206" height="66" rx="18"/>
+              <text class="sender-name sender-name-light" x="244" y="200">Sarah</text><text class="bubble-text bubble-text-light" x="244" y="225">We’re in 🏕️</text>
+            </g>
+            <g class="typing-indicator typing-two"><rect x="332" y="185" width="92" height="58" rx="18"/><circle cx="358" cy="214" r="4"/><circle cx="378" cy="214" r="4"/><circle cx="398" cy="214" r="4"/></g>
+            <g class="poll-vignette">
+              <rect class="poll-card" x="158" y="276" width="304" height="178" rx="23"/>
+              <text class="poll-label" x="184" y="310">DATE POLL · 5 VOTES</text><text class="poll-date" x="184" y="352">Sep 4–7</text>
+              <g class="poll-checks" aria-hidden="true"><text class="poll-check" x="390" y="352">✓</text><text class="poll-check" x="410" y="352">✓</text><text class="poll-check" x="430" y="352">✓</text></g>
+              <rect class="poll-track" x="184" y="378" width="248" height="12" rx="6"/><rect class="poll-fill" x="184" y="378" width="207" height="12" rx="6"/>
+              <g transform="translate(184 418)">
+                <svg class="poll-avatar" x="0" y="0" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg>
+                <svg class="poll-avatar" x="27" y="0" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-sarah"/></svg>
+                <circle class="avatar avatar-three" cx="69" cy="15" r="15"/><text class="poll-ready" x="98" y="20">THE CREW IS IN</text>
+              </g>
             </g>
             <rect class="composer" x="158" y="490" width="304" height="45" rx="22"/>
             <text class="composer-text" x="182" y="518">Message the crew…</text>
             <circle class="send-button" cx="435" cy="513" r="15"/><path class="send-arrow" d="m429 513 7-6v12Z"/>
           </g>
           <g class="floating-avatar" transform="translate(55 134)"><circle cx="36" cy="36" r="35"/><text x="36" y="43">R</text><path d="M62 60 79 75"/></g>
-          <g class="floating-avatar" transform="translate(488 447)"><circle cx="36" cy="36" r="35"/><text x="36" y="43">K</text><path d="M9 62-8 80"/></g>
+          <g class="floating-avatar" transform="translate(488 447)"><circle cx="36" cy="36" r="35"/><svg x="4" y="4" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg><path d="M9 62-8 80"/></g>
         </svg>
       </div>
     </section>
@@ -204,7 +256,9 @@
         <svg class="search-results" viewBox="0 0 700 385" role="img" aria-labelledby="results-title results-desc">
           <title id="results-title">One-search availability results</title>
           <desc id="results-desc">Red Cliffs Landing has two sites open Friday through Sunday. Pine Ridge RV Park has one pull-through site. Juniper Hollow accepts requests by email.</desc>
+          <defs><linearGradient id="results-scan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
           <rect class="results-shell" x="1" y="1" width="698" height="383" rx="24"/>
+          <rect class="result-shimmer" x="-150" y="1" width="105" height="383" rx="24" fill="url(#results-scan)"/>
           <text class="results-meta" x="38" y="47">3 RESORTS CHECKED · LIVE RESULTS</text>
           <g class="result-svg-row" transform="translate(28 72)">
             <rect class="result-row-bg" width="644" height="82" rx="15"/><circle class="result-mark" cx="39" cy="41" r="21"/><text class="result-mark-text" x="39" y="46">RC</text>
@@ -232,6 +286,7 @@
         <g class="stars stars-a"><circle cx="71" cy="116" r="2"/><circle cx="213" cy="242" r="1.5"/><circle cx="367" cy="91" r="2"/><circle cx="535" cy="205" r="1.5"/><circle cx="713" cy="73" r="2"/><circle cx="892" cy="166" r="1.5"/><circle cx="1088" cy="93" r="2"/><circle cx="1284" cy="218" r="1.5"/><circle cx="1380" cy="74" r="2"/></g>
         <g class="stars stars-b"><circle cx="124" cy="417" r="1.5"/><circle cx="298" cy="548" r="2"/><circle cx="474" cy="394" r="1.5"/><circle cx="651" cy="512" r="2"/><circle cx="833" cy="370" r="1.5"/><circle cx="1019" cy="502" r="2"/><circle cx="1206" cy="383" r="1.5"/><circle cx="1360" cy="561" r="2"/></g>
         <g class="stars stars-c"><circle cx="61" cy="765" r="2"/><circle cx="224" cy="906" r="1.5"/><circle cx="402" cy="742" r="2"/><circle cx="577" cy="884" r="1.5"/><circle cx="761" cy="716" r="2"/><circle cx="947" cy="912" r="1.5"/><circle cx="1132" cy="756" r="2"/><circle cx="1321" cy="884" r="1.5"/></g>
+        <g class="shooting-star"><path d="M0 0-92 44"/><circle cx="0" cy="0" r="3"/></g>
       </svg>
       <div class="ai-intro reveal">
         <p class="kicker">04 · While you drive</p>
@@ -244,7 +299,10 @@
           <span class="beacon-pulse pulse-one"></span><span class="beacon-pulse pulse-two"></span>
         </div>
         <div class="call-card">
-          <p class="calling-label"><span></span> BASECAMP AI IS CALLING</p>
+          <div class="call-card-meta">
+            <p class="calling-label"><span></span> BASECAMP AI IS CALLING</p>
+            <p class="call-requester"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg><span>for Katie’s crew</span></p>
+          </div>
           <h3>Pine Grove RV Resort</h3>
           <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p class="call-transcript"><span>Calling Pine Grove RV Resort…</span><strong>✓ 2 sites open Fri–Sun. Want me to hold one?</strong></p>
@@ -276,6 +334,7 @@
         <ellipse class="fire-glow" cx="260" cy="174" rx="220" ry="64"/>
         <path class="log" d="m146 175 222-47 8 34-222 47Z"/><path class="log" d="m145 130 231 51-8 34-231-51Z"/>
         <path class="flame flame-outer" d="M260 178c-67-48-54-94-17-136 0 31 24 38 25 66 19-20 31-37 27-64 47 43 64 102-35 134Z"/>
+        <path class="flame flame-middle" d="M260 179c-49-37-38-73-12-108 3 25 21 34 19 57 15-14 24-28 23-48 32 33 37 70-30 99Z"/>
         <path class="flame flame-inner" d="M260 179c-35-29-27-58-6-84 4 20 19 28 15 49 13-10 20-23 20-36 23 27 20 53-29 71Z"/>
       </svg>
     </section>
