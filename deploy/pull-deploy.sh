@@ -18,7 +18,11 @@ flock -n 9 || exit 0
 git -C "$REPO_DIR" fetch --quiet --prune origin main || fail "git fetch failed"
 current="$(git -C "$REPO_DIR" rev-parse HEAD)"
 target="$(git -C "$REPO_DIR" rev-parse origin/main)"
-[[ "$current" != "$target" ]] || { log "No deployment change"; exit 0; }
+# First-run guard: an up-to-date clone with an empty webroot must still deploy.
+if [[ "$current" == "$target" && -f "$WEBROOT/index.html" ]]; then
+    log "No deployment change"
+    exit 0
+fi
 
 git -C "$REPO_DIR" reset --hard origin/main >/dev/null || fail "reset to origin/main failed"
 
