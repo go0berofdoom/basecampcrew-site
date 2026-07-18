@@ -1,5 +1,5 @@
 (() => {
-  document.documentElement.classList.add('js');
+  document.documentElement.classList.add('js-enabled');
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const reveals = document.querySelectorAll('.reveal');
@@ -13,7 +13,14 @@
         }
       });
     }, { threshold: 0.13, rootMargin: '0px 0px -6% 0px' });
-    reveals.forEach((item) => observer.observe(item));
+    reveals.forEach((item) => {
+      const bounds = item.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+        item.classList.add('is-visible');
+      } else {
+        observer.observe(item);
+      }
+    });
   } else {
     reveals.forEach((item) => item.classList.add('is-visible'));
   }
@@ -41,9 +48,16 @@
     }
   };
 
-  if (parallaxItems.length) {
+  if (parallaxItems.length && !reducedMotion.matches) {
     updateParallax();
     window.addEventListener('scroll', requestParallax, { passive: true });
     window.addEventListener('resize', requestParallax, { passive: true });
   }
+
+  reducedMotion.addEventListener?.('change', (event) => {
+    if (event.matches) {
+      reveals.forEach((item) => item.classList.add('is-visible'));
+      parallaxItems.forEach((item) => item.style.removeProperty('--parallax-y'));
+    }
+  });
 })();
