@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly refresh of BaseCamp US-only network sets
+
+[Timer]
+OnCalendar=weekly
+RandomizedDelaySec=6h
+Persistent=true
+Unit=basecampcrew-geo-refresh.service
+
+[Install]
+WantedBy=timers.target

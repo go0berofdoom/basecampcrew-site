@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">BaseCamp — RV trips are better together</title>
+  <desc id="desc">An orange route winds past an RV and into green mountains.</desc>
+  <rect width="1200" height="630" fill="#f3f5ee"/>
+  <g opacity=".15" fill="#1d6f42"><circle cx="40" cy="40" r="2"/><circle cx="80" cy="40" r="2"/><circle cx="120" cy="40" r="2"/><circle cx="40" cy="80" r="2"/><circle cx="80" cy="80" r="2"/><circle cx="120" cy="80" r="2"/></g>
+  <circle cx="1015" cy="126" r="83" fill="#ff7a3d"/>
+  <path d="M625 408 792 216l106 110 91-157 224 250v211H625Z" fill="#9eb7a4"/>
+  <path d="M555 455 711 299l111 106 116-119 145 144 127-103v303H555Z" fill="#1d6f42"/>
+  <path d="M-30 570c170-54 277-11 387-50 96-35 180-86 290-69 138 21 232 92 582 128v51H-30Z" fill="#d9d8c6"/>
+  <path d="M-20 576c165-43 276-8 384-48 106-39 181-79 287-61 132 22 236 88 559 121" fill="none" stroke="#fffdf7" stroke-width="5" stroke-dasharray="18 18"/>
+  <g transform="translate(566 455)"><path d="M0 15C0 7 7 0 15 0h131c15 0 28 10 33 24l8 30H12C5 54 0 48 0 41Z" fill="#fffdf7" stroke="#10251c" stroke-width="3"/><path d="M120 9h24c11 0 20 9 25 24h-49Z" fill="#bdd7d4"/><rect x="18" y="11" width="40" height="24" rx="3" fill="#1d6f42"/><rect x="68" y="11" width="40" height="24" rx="3" fill="#1d6f42"/><circle cx="40" cy="54" r="16" fill="#10251c"/><circle cx="151" cy="54" r="16" fill="#10251c"/></g>
+  <g transform="translate(62 64)" fill="#1d6f42"><path d="M0 48 29 0l14 22 9-14 25 40Z"/><path d="m27 48 15-24 14 24Z" fill="#ff7a3d"/></g>
+  <text x="155" y="104" fill="#10251c" font-family="Georgia,serif" font-size="48" font-weight="700">BaseCamp</text>
+  <text x="60" y="255" fill="#10251c" font-family="Georgia,serif" font-size="79" letter-spacing="-4">The road is better</text>
+  <text x="60" y="342" fill="#1d6f42" font-family="Georgia,serif" font-size="88" font-style="italic" letter-spacing="-4">together.</text>
+  <text x="62" y="407" fill="#5d6b62" font-family="Trebuchet MS,sans-serif" font-size="25">Plan the trip. Find the resort. Let AI make the call.</text>
+  <text x="62" y="540" fill="#1d6f42" font-family="monospace" font-size="18" font-weight="700" letter-spacing="2">COMING SOON TO THE APP STORE</text>
+</svg>

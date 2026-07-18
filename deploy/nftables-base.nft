@@ -1,0 +1,30 @@
+table inet basecampcrew {
+    chain input {
+        type filter hook input priority filter; policy drop;
+
+        iifname "lo" accept
+        ct state established,related accept
+        ct state invalid drop
+
+        # Tailscale is the only administrative network. This includes SSH.
+        iifname "tailscale0" accept
+
+        # Permit essential network diagnostics without exposing services.
+        ip protocol icmp icmp type { destination-unreachable, time-exceeded, parameter-problem } accept
+        ip6 nexthdr ipv6-icmp icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, nd-neighbor-solicit, nd-neighbor-advert, nd-router-advert } accept
+
+        tcp dport { 80, 443 } ip saddr @us_ipv4 ct state new accept
+        tcp dport { 80, 443 } ip6 saddr @us_ipv6 ct state new accept
+
+        # No public SSH rule exists: port 22 is reachable only over tailscale0.
+        counter drop
+    }
+
+    chain forward {
+        type filter hook forward priority filter; policy drop;
+    }
+
+    chain output {
+        type filter hook output priority filter; policy accept;
+    }
+}

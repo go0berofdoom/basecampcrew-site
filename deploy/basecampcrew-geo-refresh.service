@@ -1,0 +1,14 @@
+[Unit]
+Description=Refresh BaseCamp US-only nftables network sets
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/basecampcrew-geo-refresh
+Nice=10
+ProtectSystem=strict
+ReadWritePaths=/etc/nftables.d /tmp
+PrivateTmp=true
+NoNewPrivileges=true
+

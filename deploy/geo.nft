@@ -1,0 +1,17 @@
+# Last-known-good US network sets. geo-refresh.sh replaces this file only
+# after both downloads and the complete nftables transaction validate.
+table inet basecampcrew {
+    set us_ipv4 {
+        type ipv4_addr
+        flags interval
+        auto-merge
+        elements = { }
+    }
+
+    set us_ipv6 {
+        type ipv6_addr
+        flags interval
+        auto-merge
+        elements = { }
+    }
+}
