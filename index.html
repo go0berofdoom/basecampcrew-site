@@ -30,34 +30,60 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <svg class="avatar-sprite" aria-hidden="true" focusable="false">
     <defs>
-      <symbol id="avatar-sarah" viewBox="0 0 64 64">
-        <circle class="portrait-bg portrait-bg-sarah" cx="32" cy="32" r="30"/>
-        <path class="portrait-hair portrait-hair-sarah" d="M11 45c-3-6 2-10 0-16-2-9 5-19 15-19 5-5 17-3 21 5 8 2 9 12 6 18 4 7-2 15-9 17H19c-6-1-10-7-8-13Z"/>
-        <path class="portrait-skin" d="M27 46h10v10H27z"/>
-        <path class="portrait-top portrait-top-sarah" d="M10 64c2-10 8-15 17-15h10c9 0 15 5 17 15Z"/>
-        <path class="portrait-flannel" d="m20 51 12 10 12-10-7-3H27Z"/>
-        <path class="portrait-flannel-line" d="m20 51 9 3 3 7 3-7 9-3M32 61v3"/>
-        <path class="portrait-skin portrait-face" d="M18 27c0-10 6-16 14-16s14 6 14 16v7c0 10-6 16-14 16S18 44 18 34Z"/>
-        <path class="portrait-hair portrait-hair-sarah" d="M17 29c-1-12 6-20 15-20 8 0 14 6 16 15-8 0-14-4-18-9-2 6-7 11-13 14Zm-4 17c6-2 5-8 4-14l6 3c1 7-1 12-6 15Zm38 0c-6-2-5-8-4-14l-6 3c-1 7 1 12 6 15Z"/>
-        <path class="portrait-feature" d="M25 30h2m10 0h2"/>
-        <path class="portrait-smile portrait-smile-wide" d="M24 37c2 6 14 6 16 0-5 2-11 2-16 0Z"/>
-        <g class="portrait-sunglasses">
-          <circle cx="25" cy="12" r="5"/><circle cx="39" cy="12" r="5"/><path d="M30 12h4M20 10l-4-2m28 2 4-2"/>
+      <clipPath id="portrait-sarah-clip"><circle cx="50" cy="50" r="47"/></clipPath>
+      <clipPath id="portrait-katie-clip"><circle cx="50" cy="50" r="47"/></clipPath>
+      <symbol id="avatar-sarah" viewBox="0 0 100 100">
+        <circle class="portrait-bg portrait-bg-sarah" cx="50" cy="50" r="47"/>
+        <g clip-path="url(#portrait-sarah-clip)">
+          <path class="portrait-hair portrait-hair-sarah" d="M17 69c-5-9 2-15-1-24-4-13 3-28 17-31 9-7 27-3 32 8 13 1 20 15 14 28 6 10-2 22-13 25Z"/>
+          <path class="portrait-skin" d="M42 65h16v18H42z"/>
+          <path class="portrait-top portrait-top-sarah" d="M6 102c4-18 17-27 35-27h18c18 0 31 9 35 27Z"/>
+          <path class="portrait-flannel" d="m20 84 19-10 11 18 11-18 19 10-3 18H23Z"/>
+          <path class="portrait-flannel-line" d="m21 84 18 4 11 4 11-4 18-4M32 78l4 24m32-24-4 24M50 92v10M24 91h53"/>
+          <path class="portrait-skin portrait-face" d="M29 39c0-16 8-25 21-25s22 9 22 25v11c0 16-9 27-22 27S29 66 29 50Z"/>
+          <path class="portrait-hair portrait-hair-sarah" d="M27 47c-3-20 7-34 23-34 14 0 24 10 25 28-12-1-21-6-28-16-4 9-11 17-20 22Zm-8 23c9-3 10-12 8-22l9 5c1 11-3 19-11 23Zm61-1c-9-2-10-11-7-21l-9 5c-2 11 2 19 10 23Z"/>
+          <path class="portrait-hair-highlight portrait-hair-highlight-sarah" d="M22 38c2-10 8-17 16-20m30 7c6 7 8 16 5 25M22 57c4 5 4 10 1 15m53-16c-4 5-4 10-1 15"/>
+          <path class="portrait-brow" d="M37 43c3-2 6-2 9 0m9 0c3-2 6-2 9 0"/>
+          <path class="portrait-eye" d="M38 48c2 2 5 2 7 0m11 0c2 2 5 2 7 0"/>
+          <path class="portrait-nose" d="m50 48-1 8 4 1"/>
+          <path class="portrait-smile" d="M40 61c5 5 15 5 20 0-7 2-13 2-20 0Z"/>
+          <g class="portrait-sunglasses">
+            <circle cx="41" cy="17" r="8"/><circle cx="61" cy="17" r="8"/><path d="M49 17h4M33 14l-7-3m43 3 7-3"/>
+          </g>
         </g>
-        <circle class="portrait-ring" cx="32" cy="32" r="30"/>
+        <circle class="portrait-ring" cx="50" cy="50" r="47"/>
       </symbol>
-      <symbol id="avatar-katie" viewBox="0 0 64 64">
-        <circle class="portrait-bg portrait-bg-katie" cx="32" cy="32" r="30"/>
-        <path class="portrait-hair portrait-hair-katie" d="M10 61V29C10 14 18 5 31 5c14 0 23 10 23 25v31H42V29H22v32Z"/>
-        <path class="portrait-skin" d="M27 46h10v10H27z"/>
-        <path class="portrait-top portrait-top-katie" d="M9 64c2-10 9-15 18-15h10c9 0 16 5 18 15Z"/>
-        <path class="portrait-skin portrait-face" d="M18 26c0-10 6-16 14-16s14 6 14 16v8c0 10-6 16-14 16S18 44 18 34Z"/>
-        <path class="portrait-hair portrait-hair-katie" d="M16 58V28c0-12 6-20 14-21-1 7-5 15-12 21l5 2v28Zm35 0V29C51 16 43 7 30 7c6 4 11 10 14 18 1 10 0 22-1 33Z"/>
-        <circle class="portrait-hoop" cx="18" cy="36" r="3.7"/>
-        <circle class="portrait-hoop" cx="46" cy="36" r="3.7"/>
-        <path class="portrait-feature" d="M25 30h2m10 0h2"/>
-        <path class="portrait-smile portrait-smile-wide" d="M24 37c2 6 14 6 16 0-5 2-11 2-16 0Z"/>
-        <circle class="portrait-ring" cx="32" cy="32" r="30"/>
+      <symbol id="avatar-katie" viewBox="0 0 100 100">
+        <circle class="portrait-bg portrait-bg-katie" cx="50" cy="50" r="47"/>
+        <g clip-path="url(#portrait-katie-clip)">
+          <path class="portrait-hair portrait-hair-katie" d="M12 103V36C12 14 26 4 51 4 74 4 88 18 88 39v64Z"/>
+          <path class="portrait-skin" d="M42 65h16v18H42z"/>
+          <path class="portrait-skin portrait-shoulders" d="M5 103c3-18 17-27 37-27h16c20 0 34 9 37 27Z"/>
+          <path class="portrait-top portrait-top-katie" d="M25 103c1-13 7-22 17-27 2 7 14 7 16 0 10 5 16 14 17 27Z"/>
+          <path class="portrait-halter" d="M39 78c4 5 18 5 22 0l6 25H33Z"/>
+          <circle class="portrait-hoop portrait-hoop-beaded" cx="29" cy="54" r="11"/>
+          <circle class="portrait-hoop portrait-hoop-beaded" cx="72" cy="54" r="11"/>
+          <path class="portrait-skin portrait-face portrait-face-katie" d="M30 37c0-17 8-26 21-26s21 10 20 26l-1 15c-1 10-6 19-14 25l-6 3-6-3c-8-6-12-15-13-25Z"/>
+          <path class="portrait-brow portrait-brow-katie" d="M36 40c4-3 8-3 12-1m6 0c4-2 8-2 11 1"/>
+          <path class="portrait-eye portrait-eye-katie" d="M37 47c3 3 7 3 10 0m8 0c3 3 7 3 10 0"/>
+          <circle class="portrait-iris" cx="42" cy="47.2" r="1.65"/><circle class="portrait-iris" cx="60" cy="47.2" r="1.65"/>
+          <path class="portrait-eye-crease" d="m34 48-3 2m17 0 2 2m3 0 2-2m11-2 3 2"/>
+          <path class="portrait-nose" d="m51 47-2 10 4 1"/>
+          <path class="portrait-smile-crease" d="m35 60-4 2m34-2 4 2"/>
+          <path class="portrait-mouth-open" d="M35 60c4 14 25 15 31 0-9 4-22 4-31 0Z"/>
+          <path class="portrait-teeth" d="M37 61c8 2 18 2 27 0-2 5-6 7-13 7s-12-2-14-7Z"/>
+          <path class="portrait-tongue" d="M43 70c5 2 11 2 16-1-2 5-12 7-16 1Z"/>
+          <path class="portrait-hair portrait-hair-katie portrait-hair-front" d="M14 103V38C14 18 27 6 48 5c-7 7-12 17-14 29l-2 69Zm72 0V39C86 18 73 6 50 5c11 7 17 18 18 31l-1 67Z"/>
+          <path class="portrait-hair-highlight portrait-hair-highlight-katie" d="M25 21c-5 13-6 37-5 72m15-73c-5 18-6 46-5 76M68 19c7 19 7 47 6 76m8-61c3 20 2 42 1 59"/>
+          <path class="portrait-hair-part" d="M46 6c-6 1-11 4-14 10m15-10c9 1 16 4 21 10"/>
+          <g class="portrait-large-detail">
+            <path class="portrait-skin portrait-forearm" d="M92 103 67 89l6-10 25 14v10Z"/>
+            <path class="portrait-watch" d="m74 81 8 5-5 10-8-5Z"/>
+            <path class="portrait-watch-mesh" d="m73 84 7 4m-8-1 7 4m-9-1 7 4"/>
+            <path class="portrait-ring-detail" d="m88 96 4 2m-6 1 4 2"/>
+          </g>
+        </g>
+        <circle class="portrait-ring" cx="50" cy="50" r="47"/>
       </symbol>
     </defs>
   </svg>
@@ -151,14 +177,21 @@
       <div class="section-copy reveal">
         <p class="kicker">01 · Beyond the group chat</p>
         <h2 id="together-title">Turn “we should”<br><em>into “we’re in.”</em></h2>
-        <div class="crew-cluster">
-          <div class="crew-cluster-avatars" aria-hidden="true">
-            <svg class="crew-cluster-avatar named-avatar" viewBox="0 0 64 64"><use href="#avatar-katie"/></svg>
-            <svg class="crew-cluster-avatar named-avatar" viewBox="0 0 64 64"><use href="#avatar-sarah"/></svg>
-            <span class="crew-cluster-avatar crew-dot crew-dot-orange"></span>
-            <span class="crew-cluster-avatar crew-dot crew-dot-green"></span>
+        <div class="crew-feature" aria-label="Meet Katie and Sarah, part of the BaseCamp crew">
+          <div class="crew-portrait-cards">
+            <article class="crew-portrait-card crew-card-katie">
+              <svg class="crew-card-portrait" viewBox="0 0 100 100" role="img" aria-label="Katie laughing, with long straight dark hair, hoop earrings, and a black halter top"><use href="#avatar-katie"/></svg>
+              <p><span>Katie</span><svg class="crew-motif" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 19h10M9 17l-3 3m9-3 3 3"/><path class="motif-fill" d="M12 17c-5 0-6-5-3-8 0 3 2 3 2 3-1-5 4-7 4-10 4 6 5 8 3 12-1 2-3 3-6 3Z"/></svg></p>
+            </article>
+            <article class="crew-portrait-card crew-card-sarah">
+              <svg class="crew-card-portrait" viewBox="0 0 100 100" role="img" aria-label="Sarah smiling, with a wavy honey lob, sunglasses on her head, and a flannel shirt"><use href="#avatar-sarah"/></svg>
+              <p><span>Sarah</span><svg class="crew-motif" viewBox="0 0 24 24" aria-hidden="true"><path class="motif-fill" d="M12 22S5 15 5 9a7 7 0 1 1 14 0c0 6-7 13-7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></p>
+            </article>
           </div>
-          <span class="crew-cluster-caption">the whole crew, one map</span>
+          <div class="crew-more" aria-label="More crew members">
+            <span class="crew-dot crew-dot-orange"></span><span class="crew-dot crew-dot-green"></span>
+            <span class="crew-cluster-caption">the whole crew, one map</span>
+          </div>
         </div>
         <p>Group texts are good at dreaming and terrible at departing. BaseCamp keeps the chat, dates, RSVPs, and every rig’s shared location with the trip—so the plan finally leaves home.</p>
         <ul class="feature-list" aria-label="Planning features">
@@ -178,13 +211,13 @@
             <rect class="phone-notch" x="258" y="49" width="104" height="20" rx="10"/>
             <text class="phone-meta" x="158" y="91">BEAR LAKE · CREW CHAT</text>
             <g class="chat-message chat-message-one">
-              <svg class="chat-avatar" x="150" y="118" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg>
+              <svg class="chat-avatar" x="145" y="114" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-katie"/></svg>
               <rect class="bubble bubble-in" x="194" y="105" width="250" height="66" rx="18"/>
               <text class="sender-name" x="216" y="126">Katie</text><text class="bubble-text" x="216" y="151">Labor Day at Bear Lake?</text>
             </g>
             <g class="typing-indicator typing-one"><rect x="194" y="111" width="92" height="58" rx="18"/><circle cx="220" cy="140" r="4"/><circle cx="240" cy="140" r="4"/><circle cx="260" cy="140" r="4"/></g>
             <g class="chat-message chat-message-two">
-              <svg class="chat-avatar" x="442" y="193" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-sarah"/></svg>
+              <svg class="chat-avatar" x="438" y="189" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-sarah"/></svg>
               <rect class="bubble bubble-out" x="218" y="179" width="206" height="66" rx="18"/>
               <text class="sender-name sender-name-light" x="244" y="200">Sarah</text><text class="bubble-text bubble-text-light" x="244" y="225">We’re in 🏕️</text>
             </g>
@@ -195,8 +228,8 @@
               <g class="poll-checks" aria-hidden="true"><text class="poll-check" x="390" y="352">✓</text><text class="poll-check" x="410" y="352">✓</text><text class="poll-check" x="430" y="352">✓</text></g>
               <rect class="poll-track" x="184" y="378" width="248" height="12" rx="6"/><rect class="poll-fill" x="184" y="378" width="207" height="12" rx="6"/>
               <g transform="translate(184 418)">
-                <svg class="poll-avatar" x="0" y="0" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg>
-                <svg class="poll-avatar" x="27" y="0" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-sarah"/></svg>
+                <svg class="poll-avatar" x="0" y="2" width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-katie"/></svg>
+                <svg class="poll-avatar" x="23" y="2" width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-sarah"/></svg>
                 <circle class="avatar avatar-three" cx="69" cy="15" r="15"/><text class="poll-ready" x="98" y="20">THE CREW IS IN</text>
               </g>
             </g>
@@ -205,7 +238,7 @@
             <circle class="send-button" cx="435" cy="513" r="15"/><path class="send-arrow" d="m429 513 7-6v12Z"/>
           </g>
           <g class="floating-avatar" transform="translate(55 134)"><circle cx="36" cy="36" r="35"/><text x="36" y="43">R</text><path d="M62 60 79 75"/></g>
-          <g class="floating-avatar" transform="translate(488 447)"><circle cx="36" cy="36" r="35"/><svg x="4" y="4" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg><path d="M9 62-8 80"/></g>
+          <g class="floating-avatar" transform="translate(488 447)"><circle cx="36" cy="36" r="35"/><svg x="4" y="4" width="64" height="64" viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-katie"/></svg><path d="M9 62-8 80"/></g>
         </svg>
       </div>
     </section>
@@ -301,7 +334,7 @@
         <div class="call-card">
           <div class="call-card-meta">
             <p class="calling-label"><span></span> BASECAMP AI IS CALLING</p>
-            <p class="call-requester"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#avatar-katie"/></svg><span>for Katie’s crew</span></p>
+            <p class="call-requester"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#avatar-katie"/></svg><span>for Katie’s crew</span></p>
           </div>
           <h3>Pine Grove RV Resort</h3>
           <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>

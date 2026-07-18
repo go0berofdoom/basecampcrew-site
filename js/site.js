@@ -27,7 +27,7 @@
     '.chat-message',
     '.poll-vignette',
     '.poll-check',
-    '.crew-cluster-avatar',
+    '.crew-portrait-card',
     '.result-svg-row',
     '.availability-pill',
     '.ai-card',
@@ -395,25 +395,26 @@
         });
       };
 
-      const setupCrewClusterEntrance = () => {
-        const cluster = document.querySelector('.crew-cluster');
-        if (!cluster) return;
+      const setupCrewFeatureEntrance = (mobile) => {
+        const feature = document.querySelector('.crew-feature');
+        if (!feature) return;
 
         ScrollTrigger.create({
-          trigger: cluster,
+          trigger: feature,
           start: 'top 88%',
           once: true,
           onEnter: () => {
-            const avatars = [...cluster.querySelectorAll('.crew-cluster-avatar')];
-            safelyAnimate(avatars, () => gsap.from(avatars, {
+            const cards = [...feature.querySelectorAll('.crew-portrait-card')];
+            safelyAnimate(cards, () => gsap.from(cards, {
               opacity: 0,
-              y: 12,
-              scale: 0.68,
-              rotation: -5,
-              duration: 0.46,
-              stagger: 0.09,
-              transformOrigin: '50% 70%',
-              ease: 'back.out(1.65)',
+              x: (index) => index ? 18 : -18,
+              y: mobile ? 18 : 28,
+              scale: mobile ? 0.9 : 0.84,
+              rotation: (index) => index ? 13 : -12,
+              duration: mobile ? 0.62 : 0.78,
+              stagger: 0.14,
+              transformOrigin: '50% 85%',
+              ease: 'back.out(1.45)',
               clearProps: 'opacity,transform'
             }));
           }
@@ -935,7 +936,7 @@
         setupHeroEntrance(conditions.mobile);
         setupCommonAmbience();
         setupChatSequence();
-        setupCrewClusterEntrance();
+        setupCrewFeatureEntrance(conditions.mobile);
         setupAvailabilitySequence();
         const cleanupDesktop = conditions.desktop ? setupDesktopMotion() : undefined;
         requestAnimationFrame(() => ScrollTrigger.refresh());
