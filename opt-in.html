@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BaseCamp Family Invites — SMS Opt-In Policy</title>
+  <meta name="description" content="Express-consent workflow and SMS program disclosures for BaseCamp Family Invites.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://basecampcrew.com/opt-in">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d6f42'/%3E%3Cpath d='M11 46 28 16l8 14 5-8 13 24Z' fill='%23f4f4ec'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/legal.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="legal-header"><a class="brand" href="/"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M5 35 19.6 9l6.8 11.8 4.2-6.8L39 35Z"/><path class="fire" d="m18 35 7.1-11.6L32 35Z"/></svg>BaseCamp</a><a class="back" href="/">← Back to camp</a></header>
+  <main id="content">
+    <p class="legal-kicker">SMS opt-in evidence</p>
+    <h1>BaseCamp Family Invites</h1>
+    <p class="intro"><strong>BaseCamp Family Invites</strong> is a transactional SMS-only program. Messages are sent from our verified toll-free number solely to deliver a family invite requested by an existing BaseCamp user.</p>
+    <div class="notice"><strong>One invite. Exactly one message.</strong>Message frequency is one message per invite. We never send recurring or marketing messages through this program.</div>
+
+    <div class="sms-summary" aria-label="SMS program summary">
+      <div><small>Program</small><strong>BaseCamp Family Invites</strong></div>
+      <div><small>Message type</small><strong>Transactional only</strong></div>
+      <div><small>Frequency</small><strong>One message per invite</strong></div>
+      <div><small>Sending number</small><strong>Verified toll-free number</strong></div>
+    </div>
+
+    <section>
+      <h2>Express-consent workflow</h2>
+      <p>Before the app can send an invite, the inviting user must affirm that the recipient expressly agreed to receive the one-time text. The required checkbox is unchecked by default, and the “Send invite” button remains disabled until it is checked. This workflow documents the express consent required under Twilio rejection code 30446.</p>
+      <figure class="consent-mockup">
+        <svg viewBox="0 0 720 650" role="img" aria-labelledby="invite-screen-title invite-screen-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="invite-screen-title">BaseCamp Invite a family member screen</title>
+          <desc id="invite-screen-desc">A phone-number field, a required unchecked consent checkbox, the full consent statement, and a disabled Send invite button.</desc>
+          <rect width="720" height="650" rx="32" class="mockup-shell"/>
+          <rect x="28" y="28" width="664" height="594" rx="24" class="mockup-screen"/>
+          <circle cx="64" cy="72" r="18" class="mockup-back"/>
+          <path d="m69 63-9 9 9 9" class="mockup-back-icon"/>
+          <text x="360" y="80" text-anchor="middle" class="mockup-nav">BASECAMP</text>
+          <text x="72" y="144" class="mockup-title">Invite a family member</text>
+          <text x="72" y="178" class="mockup-copy">Send one text invitation to join your family.</text>
+
+          <text x="72" y="232" class="mockup-label">FAMILY MEMBER’S PHONE NUMBER</text>
+          <rect x="72" y="248" width="576" height="72" rx="12" class="mockup-field"/>
+          <text x="96" y="292" class="mockup-placeholder">(555) 123-4567</text>
+
+          <rect x="72" y="360" width="30" height="30" rx="5" class="mockup-checkbox"/>
+          <text x="72" y="416" class="mockup-required">REQUIRED</text>
+          <text x="122" y="378" class="mockup-consent" aria-label="I confirm [name] has agreed to receive a one-time BaseCamp invite text at this number. Msg&amp;data rates may apply. Reply STOP to opt out.">
+            <tspan x="122" dy="0">I confirm [name] has agreed to receive a one-time</tspan>
+            <tspan x="122" dy="27">BaseCamp invite text at this number. Msg&amp;data rates</tspan>
+            <tspan x="122" dy="27">may apply. Reply STOP to opt out.</tspan>
+          </text>
+
+          <rect x="72" y="500" width="576" height="72" rx="36" class="mockup-button-disabled"/>
+          <text x="360" y="545" text-anchor="middle" class="mockup-button-label">Send invite</text>
+          <text x="360" y="598" text-anchor="middle" class="mockup-state">DISABLED UNTIL CONSENT IS CHECKED</text>
+        </svg>
+        <figcaption>The consent control as it appears before the inviting user checks the required box.</figcaption>
+      </figure>
+      <ol class="workflow-steps">
+        <li>An existing BaseCamp user enters their family member’s phone number.</li>
+        <li>The user affirms the recipient’s consent by checking the required consent checkbox.</li>
+        <li>Exactly one invite message is sent.</li>
+        <li>The recipient can reply STOP at any time and HELP for help; STOP is honored automatically and permanently.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Sample message</h2>
+      <p class="sample-message"><small>BASECAMP FAMILY INVITES</small>"Kevin added you to their family on BaseCamp. Join: https://basecampcrew.com/join — Msg&amp;data rates may apply. Reply STOP to opt out, HELP for help."</p>
+    </section>
+
+    <section>
+      <h2>Message frequency</h2>
+      <p>One message per invite; no recurring or marketing messages, ever. Message and data rates may apply.</p>
+    </section>
+
+    <section>
+      <h2>Opt-out &amp; help</h2>
+      <p>Reply STOP to unsubscribe, HELP for assistance, or email <a href="mailto:hello@basecampcrew.com">hello@basecampcrew.com</a>. STOP requests are honored automatically and permanently.</p>
+      <p>For more information, read our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Use</a>.</p>
+    </section>
+  </main>
+  <footer>© 2026 BaseCamp · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/opt-in">SMS Opt-In Policy</a></footer>
+</body>
+</html>
